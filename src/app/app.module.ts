@@ -10,11 +10,20 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
+import {
+    ProductListComponent
+} from './components/product-list/product-list.component';
+import {
+    ProductEditComponent
+} from './components/product-edit/product-edit.component';
+import { ProductService, PubSubService } from './services';
 
 @NgModule({
     declarations: [
         AppComponent,
-        HomeComponent
+        HomeComponent,
+        ProductListComponent,
+        ProductEditComponent
     ],
     imports: [
         BrowserModule,
@@ -27,6 +36,10 @@ import { HomeComponent } from './components/home/home.component';
         NgbModule.forRoot(),
         AppRoutingModule
     ],
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent],
+    providers: [
+        ProductService,
+        PubSubService
+    ]
 })
-export class AppModule {}
+export class AppModule { }
